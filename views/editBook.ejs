@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            /* animation: animateBg 5s linear infinite; */
+        }
+
+        /* @keyframes animateBg {
+        100% { filter: hue-rotate(360deg);}
+    } */
+
+
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 880px;
+            background: #0a0a0a;
+            /* border-radius: 1%; */
+            overflow: hidden;
+            margin-left: 150PX;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 500px;
+            height: 800px;
+            background: linear-gradient(90deg, transparent, #0598f7, #0598f7);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 500px;
+            height: 800px;
+            background: linear-gradient(90deg, transparent, #d31580, #d31580);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        form {
+            position: absolute;
+            inset: 2px;
+            background: #28292d;
+            /* border-radius: 50%; */
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        h2 {
+            position: absolute;
+            top: 15px;
+            color: #d31580;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+
+        .uc b {
+            position: relative;
+            top: -15px;
+            width: 150px;
+            height: 25px;
+            color: #0598f7;
+            background: #28292d;
+            font-size: 16px;
+            border: 1px solid #0598f7;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .inputBox {
+            position: relative;
+            width: 320px;
+            margin-top: 35px;
+        }
+
+        .inputBox input {
+            position: relative;
+            width: 100%;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            color: #26e060;
+            background: transparent;
+            outline: none;
+            border: 1px solid #87a4bd;
+            letter-spacing: .05em;
+        }
+
+        .inputBox label {
+            position: absolute;
+            left: 25px;
+            top: 18px;
+            color: #87a4bd;
+            background: #28292d;
+            padding: 0 2px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            transform: translateY(-27px);
+            transition: transform .3s ease;
+            pointer-events: none;
+        }
+
+        input:invalid+label {
+            transform: translateY(0);
+            background: #28292d;
+        }
+
+        input:focus {
+            border-color: #26e060;
+        }
+
+        input:focus+label {
+            background: #28292d;
+            color: #26e060;
+            transform: translateY(-27px);
+        }
+
+        input[type="submit"] {
+            position: relative;
+            top: 40px;
+            width: 320px;
+            background: linear-gradient(to bottom, #0598f7, #4d26b8);
+            padding: 10px;
+            border-radius: 60px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid #0598f7;
+            outline: 3px solid #28292d;
+            transition: all .3s ease-in-out;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            outline: 3px solid #28292d;
+            outline-offset: -6px;
+            letter-spacing: .05em;
+        }
+
+        .link-container {
+            position: relative;
+            top: 60px;
+            width: 270px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .link-container:last-child {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .link-container a {
+            color: #87a4bd;
+            font-size: 1em;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .link-container a:hover {
+            color: #26e060;
+            text-decoration: underline;
+        }
+        a {
+    position: relative;
+    padding: 30px 90px;
+    margin-left: 50px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.5em;
+    border: 2px solid transparent;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+a:hover {
+    border: 2px solid #fff
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    inset: 0 8px;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    inset: 8px 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+a.btn1:hover::before {
+    inset: 16px 8px;
+}
+    </style>
+</head>
+
+<body>
+    <div
+        style="  display:flex;justify-content: center;align-items: center; padding-top: 20px; background: url('https://t3.ftcdn.net/jpg/08/15/90/80/360_F_815908053_Mfy2DJfv1iFSdL6ET9pRD5R5VzOOEu5k.jpg') no-repeat; background-size: cover;background-position: center; min-height: 100vh;">
+
+
+        <div class="container">
+            <form method="post" action="/BookForm/updatebook/<%=Book.id%>">
+                <h2>Book-Edit</h2>
+
+
+                <div class="inputBox">
+                    <input type="text" name="title" id="user" value="<%= Book.title%>" required>
+                    <label for="Title">Title</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="author" id="user"  value="<%= Book.author%>" required>
+                    <label for="Author">Author</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="language" id="user" value="<%= Book.language%>" required>
+                    <label for="Language">Language</label>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="oldPrice" id="user" value="<%= Book.oldPrice%>" required>
+                    <label for="oldPrice">Old-Price</label>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="price" id="user" value="<%= Book.price%>" required>
+                    <label for="Price">Price</label>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="pages" id="pass" value="<%= Book.pages%>" required>
+                    <label for="pages">pages</label>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="rating" id="user" value="<%= Book.rating%>" required>
+                    <label for="Rating">Rating</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="img" id="user" value="<%= Book.img%>" required>
+                    <label for="Rating">image</label>
+                </div>
+
+
+                <input type="submit" value="Edit">
+
+
+
+            </form>
+        </div>
+        <a href="/bookform/allBooks" class="btn1">SHOW BOOKS </a>
+
+    </div>
+</body>
+
+</html>
